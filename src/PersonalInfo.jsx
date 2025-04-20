@@ -22,16 +22,6 @@ export function PersonalInfo({ data, onUpdate, editing, onToggle }) {
     setLocalData({ ...data }); // Reset data if the main data prop changes
   }, [data]);
 
-  const isValidEmail = (email) => {
-    // Email validation regex (basic)
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const isValidPhoneNumber = (phone) => {
-    // Allow only digits and '+' sign
-    return /^[+]?\d+$/.test(phone);
-  };
-
   return (
     <section className="section">
       <div className="section-header">

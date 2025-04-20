@@ -1,34 +1,33 @@
+// src/Dashboard.jsx
 import React, { useState } from "react";
 import { EditSaveButton } from "./EditSaveButton";
 import ExperienceItem from "./ExperienceItem";
 import { PersonalInfo } from "./PersonalInfo";
 import { Skills } from "./Skills";
+import { AboutMe } from "./AboutMe";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const [aboutMe, setAboutMe] = useState("I'm a passionate creative...");
   const [editingAbout, setEditingAbout] = useState(false);
-  const [editingPersonal, setEditingPersonal] = useState(false);  // State for Personal Info edit
-  const [editingExperience, setEditingExperience] = useState(false); // Added state for Experience editing
+  const [editingPersonal, setEditingPersonal] = useState(false);
+  const [editingExperience, setEditingExperience] = useState(false);
 
   const [experience, setExperience] = useState([
     {
       id: 1,
-      jobTitle: "Experience 1 ",
-      date: "2021 - 2023",
-      bullets: ["Designed promotional materials", "Led branding projects"],
-    },
-    {
-      id: 2,
-      jobTitle: "Experience 2 ",
-      date: "2019 - 2021",
-      bullets: ["Commissioned artworks", "Collaborated with authors"],
+      jobTitle: "Experience 1",
+      startMonth: "January",
+      startYear: "2021",
+      endMonth: "December",
+      endYear: "2023",
+      bullets: "Designed promotional materials, Led branding projects",
     },
   ]);
 
   const [personalInfo, setPersonalInfo] = useState({
     name: "Name Surname",
-    location: "Lodon, UK",
+    location: "London, UK",
     workStatus: "Authorized to work",
     linkedinURL: "https://www.linkedin.com",
   });
@@ -40,8 +39,11 @@ export default function Dashboard() {
     const newExp = {
       id: newId,
       jobTitle: "New Role",
-      date: "Year - Year",
-      bullets: ["Bullet point 1"],
+      startMonth: "January",
+      startYear: "2021",
+      endMonth: "December",
+      endYear: "2023",
+      bullets: "Bullet point 1",
     };
     setExperience([...experience, newExp]);
   };
@@ -66,40 +68,25 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Personal Info Section */}
       <PersonalInfo
         data={personalInfo}
         onUpdate={handlePersonalInfoUpdate}
-        editing={editingPersonal}  // Pass editing state for Personal Info
-        onToggle={() => setEditingPersonal((prev) => !prev)}  // Toggling edit mode for Personal Info
+        editing={editingPersonal}
+        onToggle={() => setEditingPersonal((prev) => !prev)}
       />
 
-      {/* About Me Section */}
-      <section className="section">
-        <div className="section-header">
-          <h2>About Me</h2>
-          <EditSaveButton
-            editing={editingAbout}
-            onToggle={() => setEditingAbout((prev) => !prev)}
-          />
-        </div>
-        {editingAbout ? (
-          <textarea
-            className="input"
-            value={aboutMe}
-            onChange={(e) => setAboutMe(e.target.value)}
-          />
-        ) : (
-          <p className="text">{aboutMe}</p>
-        )}
-      </section>
+      <AboutMe
+        aboutMe={aboutMe}
+        setAboutMe={setAboutMe}
+        editingAbout={editingAbout}
+        setEditingAbout={setEditingAbout}
+      />
 
-      {/* Experience Section */}
       <section className="section">
         <div className="section-header">
           <h2>Experience</h2>
           <EditSaveButton
-            editing={editingExperience}  // Use editingExperience here
+            editing={editingExperience}
             onToggle={() => setEditingExperience((prev) => !prev)}
           />
         </div>
@@ -108,7 +95,7 @@ export default function Dashboard() {
           <ExperienceItem
             key={item.id}
             data={item}
-            editing={editingExperience}  // Use editingExperience here
+            editing={editingExperience}
             onUpdate={(updatedItem) => handleUpdateExperience(item.id, updatedItem)}
             onDelete={() => handleDeleteExperience(item.id)}
           />
@@ -121,7 +108,6 @@ export default function Dashboard() {
         )}
       </section>
 
-      {/* Skills Section */}
       <Skills data={skills} onUpdate={handleSkillsUpdate} />
     </div>
   );
