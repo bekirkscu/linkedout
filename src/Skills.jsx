@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+// src/Skills.jsx
+import React, { useState, useEffect } from "react";
 import { EditSaveButton } from "./EditSaveButton";
 
 export function Skills({ data, onUpdate }) {
-  const [skills, setSkills] = useState(data);
+  const [skills, setSkills] = useState(data || []);
   const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    setSkills(data || []);
+  }, [data]);
 
   const handleSkillsChange = (index, newSkill) => {
     const updatedSkills = [...skills];
@@ -15,16 +20,19 @@ export function Skills({ data, onUpdate }) {
     setSkills([...skills, "New Skill"]);
   };
 
-  const handleSave = () => {
-    onUpdate(skills);
-    setEditing(false);
-  };
-
   return (
     <section className="section">
       <div className="section-header">
         <h2>Skills</h2>
-        <EditSaveButton editing={editing} onToggle={() => setEditing((prev) => !prev)} />
+        <EditSaveButton
+          editing={editing}
+          onToggle={() => {
+            if (editing) {
+              onUpdate(skills); // Save on toggle off
+            }
+            setEditing((prev) => !prev);
+          }}
+        />
       </div>
 
       {editing ? (
@@ -38,7 +46,6 @@ export function Skills({ data, onUpdate }) {
             />
           ))}
           <button onClick={handleAddSkill}>+ Add Skill</button>
-          <button onClick={handleSave}>Save</button>
         </div>
       ) : (
         <ul className="skills-list">

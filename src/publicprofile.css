@@ -1,0 +1,53 @@
+.public-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .public-profile h1.name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .public-profile p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+  }
+  
+  .public-profile .location,
+  .public-profile .work-status,
+  .public-profile .email,
+  .public-profile .phone {
+    font-style: italic;
+  }
+  
+  .public-profile .linkedin {
+    display: flex;
+    align-items: center;
+  }
+  
+  .public-profile .linkedin a {
+    color: #0077b5;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .public-profile .linkedin a:hover {
+    text-decoration: underline;
+  }
+  
+  .public-profile .linkedin svg {
+    margin-right: 8px;
+  }
+  
