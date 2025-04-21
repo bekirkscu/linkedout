@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getFirestore } from "firebase/firestore"; // ✅ import Firestore
 
 const firebaseConfig = {
   apiKey: "AIzaSyBZqz-JTvKOasw6KTmLBJv42qreH95cR3c",
@@ -11,29 +12,31 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
-// notes below saves time when finding code at times.
+// Add this line to log if Firebase is initialized correctly
+console.log("Firebase app initialized:", app);
+
+const auth = getAuth(app);
+const db = getFirestore(app); // ✅ initialize Firestore
+
 // Google Sign-In
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
-  prompt: "select_account", // This ensures the account selection dialog is shown
+  prompt: "select_account",
 });
 
-// Sign-In with Google
 const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
       console.log("User signed in: ", user);
-      // Store the user info in the state or do something else
     })
     .catch((error) => {
       console.error("Error signing in with Google: ", error);
     });
 };
 
-// Sign out user
+// Refactored signUserOut function to directly use the named export `signOut`
 const signUserOut = () => {
   signOut(auth)
     .then(() => {
@@ -44,4 +47,4 @@ const signUserOut = () => {
     });
 };
 
-export { auth, signInWithGoogle, signUserOut };
+export { auth, db, signInWithGoogle, signUserOut, signOut }; // ✅ export signOut here

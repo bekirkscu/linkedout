@@ -76,9 +76,9 @@ textarea.input {
 }
 
 .info-field {
-    flex: 1 1 calc(33.333% - 20px); /* 3 per row with 20px gap */
+    flex: 1 1 calc(33.333% - 20px);
     min-width: 250px;
-    max-width: calc(33.333% - 20px); /* ensure consistent width */
+    max-width: calc(33.333% - 20px);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -91,17 +91,13 @@ textarea.input {
 
 .info-field input,
 .info-field select {
-    padding: 10px; /* Consistent padding */
-    font-size: 16px; /* Matching font size */
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    height: 40px; /* Ensuring all elements have the same height */
-    margin-top: 5px; /* Reduced margin for consistent spacing */
-}
-
-.info-field select {
-    height: 40px; /* Ensure select field has consistent height with inputs */
+    height: 40px;
+    margin-top: 5px;
 }
 
 .info-field input[type="email"],
@@ -215,33 +211,32 @@ textarea.input {
 }
 
 /* Skills Section Styles */
-.skills {
+.skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+    margin-top: 8px;
 }
 
-.skills .skill {
-    background-color: #f1f1f1;
-    padding: 10px 20px;
-    border-radius: 20px;
+.skill-badge {
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 16px;
     font-size: 14px;
-    color: #333;
 }
 
-.skills .add-skill-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
+.skills-edit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
 }
 
-.skills .add-skill-button:hover {
-    background-color: #218838;
+.skill-input {
+    width: auto;
+    min-width: 120px;
 }
 
 /* About Me Section Styles */
@@ -256,7 +251,7 @@ textarea.input {
     resize: none;
     overflow: hidden;
     transition: height 0.2s ease;
-    font-family: 'Arial', sans-serif; /* Set the font to Arial */
+    font-family: 'Arial', sans-serif;
 }
 
 .aboutme-textarea:focus {

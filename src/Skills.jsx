@@ -28,11 +28,11 @@ export function Skills({ data, onUpdate }) {
       </div>
 
       {editing ? (
-        <div>
+        <div className="skills-edit">
           {skills.map((skill, index) => (
             <input
               key={index}
-              className="input"
+              className="input skill-input"
               value={skill}
               onChange={(e) => handleSkillsChange(index, e.target.value)}
             />
@@ -41,9 +41,9 @@ export function Skills({ data, onUpdate }) {
           <button onClick={handleSave}>Save</button>
         </div>
       ) : (
-        <ul>
+        <ul className="skills-list">
           {skills.map((skill, index) => (
-            <li key={index} className="text">
+            <li key={index} className="skill-badge">
               {skill}
             </li>
           ))}
