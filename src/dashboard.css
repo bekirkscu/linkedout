@@ -70,47 +70,54 @@ textarea.input {
 /* Personal Info Styles */
 .personal-info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-top: 20px;
 }
 
-.personal-info .name {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
+.info-field {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.personal-info .details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 900px;
-    flex-wrap: wrap;
-    gap: 10px;
+.info-field label {
+    font-weight: bold;
     font-size: 14px;
 }
 
-.personal-info .details div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.personal-info .details div i {
+.info-field input,
+.info-field select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 40px;
     margin-top: 5px;
-    font-size: 1.2rem;
 }
 
-.personal-info .details div a {
-    text-decoration: none;
-    color: #007bff;
+.info-field input[type="email"],
+.info-field input[type="tel"],
+.info-field input[type="url"],
+.info-field select {
+    width: 100%;
 }
 
-.personal-info .linkedin-icon {
-    font-size: 1.5rem;
-    color: #0077b5;
+.save-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
 }
 
 /* Location Searchable Dropdown Styles */
@@ -259,100 +266,4 @@ textarea.input {
 .textarea-wrapper textarea {
     height: auto;
     min-height: 100px;
-}
-
-/* Public Profile Styles */
-.public-profile {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-}
-
-.public-profile h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.public-profile h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.3rem;
-}
-
-.public-profile h3 {
-    margin: 0.5rem 0 0.25rem;
-    font-weight: 600;
-}
-
-.public-profile p,
-.public-profile li {
-    margin: 0.25rem 0;
-}
-
-.public-profile .experience-item,
-.public-profile .education-item {
-    margin-bottom: 1.5rem;
-}
-
-.public-profile .skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.public-profile .skill-badge {
-    background: #eee;
-    border-radius: 12px;
-    padding: 0.3rem 0.75rem;
-    font-size: 0.9rem;
-}
-
-/* Personal Info Modifications for Public Profile */
-.public-profile .personal-info {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.public-profile .personal-info .name {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.public-profile .personal-info .details {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.public-profile .personal-info .details div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.public-profile .personal-info .details div i {
-    margin-top: 5px;
-    font-size: 1.2rem;
-}
-
-.public-profile .personal-info .details div a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.public-profile .personal-info .linkedin-icon {
-    font-size: 1.5rem;
-    color: #0077b5;
 }
