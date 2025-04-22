@@ -25,7 +25,7 @@ export function PersonalInfo({ data, onUpdate, editing, onToggle }) {
   return (
     <section className="section">
       <div className="section-header">
-        <h2>Personal Info</h2>
+        <h2>Basic Information</h2>
         {/* Pen icon now triggers edit mode */}
         <button onClick={handleSave} className="icon-button" title={editing ? "Save" : "Edit"}>
           {editing ? <Save size={18} /> : <Pencil size={18} />}
@@ -33,7 +33,7 @@ export function PersonalInfo({ data, onUpdate, editing, onToggle }) {
       </div>
       <div className="personal-info">
         <div className="info-field">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name Surname</label>
           <input
             type="text"
             id="name"
@@ -46,23 +46,15 @@ export function PersonalInfo({ data, onUpdate, editing, onToggle }) {
         </div>
         <div className="info-field">
           <label htmlFor="location">Location</label>
-          <select
+          <input
+            type="text"
             id="location"
             name="location"
+            placeholder="City, Country"
             value={localData.location}
             onChange={handleChange}
-            disabled={!editing} // Disable input when not in editing mode
-            className="input"
-          >
-            <option value="London">London, UK</option>
-            <option value="Berlin">Berlin, Germany</option>
-            <option value="NewYork">New York, USA</option>
-            <option value="Sydney">Sydney, Australia</option>
-            <option value="Tokyo">Tokyo, Japan</option>
-            <option value="Paris">Paris, France</option>
-            <option value="Toronto">Toronto, Canada</option>
-            <option value="Other">Other</option>
-          </select>
+            disabled={!editing}  // Disable input when not in editing mode
+          />
         </div>
         <div className="info-field">
           <label htmlFor="email">Email</label>
@@ -94,21 +86,15 @@ export function PersonalInfo({ data, onUpdate, editing, onToggle }) {
         </div>
         <div className="info-field">
           <label htmlFor="workStatus">Work Status</label>
-          <select
+          <input
+            type="text"
             id="workStatus"
             name="workStatus"
+            placeholder="Allowed to work in the UK, Citizen, etc."
             value={localData.workStatus}
             onChange={handleChange}
-            disabled={!editing} // Disable input when not in editing mode
-            className="input"
-          >
-            <option value="allowedToWorkInUK">Allowed to work in the UK</option>
-            <option value="citizen">Citizen</option>
-            <option value="permanentResident">Permanent resident</option>
-            <option value="onVisa">On a visa</option>
-            <option value="seekingVisa">Seeking visa sponsorship</option>
-            <option value="notAllowedToWork">Not allowed to work</option>
-          </select>
+            disabled={!editing}  // Disable input when not in editing mode
+          />
         </div>
         <div className="info-field">
           <label htmlFor="linkedinURL">LinkedIn URL</label>

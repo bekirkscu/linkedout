@@ -1,8 +1,6 @@
-// src/Dashboard.jsx
 import React, { useState, useEffect } from "react";
 import { EditSaveButton } from "./EditSaveButton";
 import ExperienceItem from "./ExperienceItem";
-import Education from "./Education";
 import { PersonalInfo } from "./PersonalInfo";
 import { Skills } from "./Skills";
 import { AboutMe } from "./AboutMe";
@@ -178,19 +176,27 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <button className="logout-button" onClick={handleLogOut}>Log Out</button>
+      {/* Header with Name and Buttons */}
+      <div className="header">
+        <div className="name-display">
+          <h3>{personalInfo.name}</h3>
+        </div>
+        <div className="buttons">
+          <button className="save-cv-button" onClick={handleSaveCv}>
+            Save CV
+          </button>
+          {user && (
+            <button
+              className="view-cv-button"
+              onClick={() => window.open(`/profile/${user.uid}`, "_blank")}
+            >
+              View My CV
+            </button>
+          )}
+        </div>
+      </div>
 
-      {/* ✅ View My CV button */}
-      {user && (
-        <button
-          className="save-button"
-          style={{ marginBottom: "20px" }}
-          onClick={() => window.open(`/profile/${user.uid}`, "_blank")}
-        >
-          View My CV
-        </button>
-      )}
-
+      {/* Personal Info Section */}
       <PersonalInfo
         data={personalInfo}
         onUpdate={handlePersonalInfoUpdate}
@@ -198,6 +204,7 @@ export default function Dashboard() {
         onToggle={() => setEditingPersonal((prev) => !prev)}
       />
 
+      {/* About Me Section */}
       <AboutMe
         aboutMe={aboutMe}
         setAboutMe={setAboutMe}
@@ -205,6 +212,7 @@ export default function Dashboard() {
         setEditingAbout={setEditingAbout}
       />
 
+      {/* Experience Section */}
       <section className="section">
         <div className="section-header">
           <h2>Experience</h2>
@@ -231,6 +239,7 @@ export default function Dashboard() {
         )}
       </section>
 
+      {/* Education Section */}
       <section className="section">
         <div className="section-header">
           <h2>Education</h2>
@@ -241,7 +250,7 @@ export default function Dashboard() {
         </div>
 
         {education.map((item) => (
-          <Education
+          <ExperienceItem
             key={item.id}
             data={item}
             editing={editingEducation}
@@ -257,10 +266,12 @@ export default function Dashboard() {
         )}
       </section>
 
+      {/* Skills Section */}
       <Skills data={skills} onUpdate={handleSkillsUpdate} />
 
-      <button className="save-button" onClick={handleSaveCv}>
-        Save CV
+      {/* Log Out Button */}
+      <button className="logout-button" onClick={handleLogOut}>
+        Log Out
       </button>
     </div>
   );

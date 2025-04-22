@@ -1,48 +1,100 @@
-/* Dashboard Styles */
+/* Overall Layout */
 .dashboard {
     font-family: 'Arial', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px 80px; /* Reduced top padding to decrease space above name and buttons */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    position: relative;
 }
 
+/* Container for name and buttons */
+.header {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Decreased margin-bottom for smaller gap */
+    width: 100%; /* Ensure header takes up full width */
+}
+
+/* View & Save CV Buttons */
+.view-cv-button,
+.save-cv-button {
+    background-color: #5aa7e6; /* Softer cooler blue */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    margin-left: 10px; /* Ensure some spacing between buttons */
+}
+
+.view-cv-button {
+    /* No need for explicit right positioning */
+}
+
+.save-cv-button {
+    /* Ensures it's properly positioned without hard margin-right */
+}
+
+.view-cv-button:hover,
+.save-cv-button:hover {
+    background-color: #3d8fd1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Styles */
 .section {
     margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .section-header h2 {
     font-size: 24px;
     font-weight: bold;
+    color: #333;
 }
 
-.add-button {
+.add-button, .save-button {
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
-    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    border: none;
 }
 
-.add-button:hover {
+.add-button:hover, .save-button:hover {
     background-color: #0056b3;
 }
 
 .text {
     font-size: 16px;
     line-height: 1.5;
+    color: #555;
 }
 
-.input {
+.input, .aboutme-textarea, .experience-header input, .experience-header select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     line-height: 1.5;
     border: 1px solid #ccc;
@@ -53,18 +105,6 @@
 textarea.input {
     height: 150px;
     resize: vertical;
-}
-
-.save-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.save-button:hover {
-    background-color: #218838;
 }
 
 /* Personal Info Styles */
@@ -87,11 +127,12 @@ textarea.input {
 .info-field label {
     font-weight: bold;
     font-size: 14px;
+    color: #333;
 }
 
 .info-field input,
 .info-field select {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -100,15 +141,9 @@ textarea.input {
     margin-top: 5px;
 }
 
-.info-field input[type="email"],
-.info-field input[type="tel"],
-.info-field input[type="url"],
-.info-field select {
-    width: 100%;
-}
-
 .save-button {
     margin-top: 20px;
+    margin-left: 10px;
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
@@ -120,38 +155,9 @@ textarea.input {
     background-color: #0056b3;
 }
 
-/* Location Searchable Dropdown Styles */
-.location-container {
-    position: relative;
-}
-
-.location-suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.location-suggestion {
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.location-suggestion:hover {
-    background-color: #f0f0f0;
-}
-
 /* Experience Item Styles */
 .experience-item {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -167,7 +173,7 @@ textarea.input {
 .experience-header input,
 .experience-header select {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
     margin: 0;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -191,15 +197,16 @@ textarea.input {
 }
 
 .experience-item .experience-bullets li {
-    font-size: 14px;
+    font-size: 16px;  /* Updated to match the experience title font */
     list-style-type: disc;
     margin-left: 20px;
+    font-family: 'Arial', sans-serif;  /* Set font to match experience title */
 }
 
 .experience-item .delete-experience {
     background-color: #dc3545;
     color: white;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border: none;
     cursor: pointer;
     font-size: 14px;
@@ -214,7 +221,7 @@ textarea.input {
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     padding: 0;
     list-style: none;
     margin-top: 8px;
@@ -230,7 +237,7 @@ textarea.input {
 .skills-edit {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     margin-top: 8px;
 }
 
@@ -238,21 +245,24 @@ textarea.input {
     width: auto;
     min-width: 120px;
 }
-
+.aboutme-wrapper {
+    max-height: 200px; /* Or however tall you want it */
+    overflow-y: auto;
+  }
 /* About Me Section Styles */
 .aboutme-textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     line-height: 1.5;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 10px;
     resize: none;
-    overflow: hidden;
-    transition: height 0.2s ease;
     font-family: 'Arial', sans-serif;
-}
+    box-sizing: border-box;
+    height: 100%; /* Fill the wrapper height */
+  }
 
 .aboutme-textarea:focus {
     outline: none;
@@ -266,4 +276,109 @@ textarea.input {
 .textarea-wrapper textarea {
     height: auto;
     min-height: 100px;
+}
+
+/* Log Out Button - Moved Inside Main Container */
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Additional Styling for the Experience Section */
+.experience-header {
+    margin-top: 30px;
+}
+
+.experience-header .date-input {
+    margin-top: 5px;
+}
+
+.experience-item .experience-bullets li {
+    margin-left: 20px;
+}
+
+/* Button Hover Effects */
+.save-button:hover, .add-button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust experience title and date to have a bit of space around the "to" */
+.experience-header .date-input {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-header .date-to {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Experience Header Date Inputs Styling */
+.experience-header .date-input input {
+    flex: 1;
+}
+
+/* Flex behavior for date section: ensure proper spacing for "to" */
+.experience-header .date-input {
+    display: flex;
+    align-items: center;
+}
+
+.experience-header .date-to {
+    margin: 0 10px;  /* Adds space around "to" */
+    font-weight: bold;
+    font-size: 16px;  /* Slightly larger text for clarity */
+}
+
+/* Optional - More specific styling if needed for date fields */
+.experience-header .date-input input {
+    width: 100%;
+}
+
+/* Experience Bullet Points Textarea Styling */
+.experience-item .experience-bullets textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;  /* Smaller font size */
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    resize: vertical;
+    font-family: 'Arial', sans-serif;
+    min-height: 40px;  /* Default height to fit one bullet */
+    max-height: 120px; /* Smaller maximum height */
+    overflow-y: auto;  /* Makes it scrollable when the content exceeds the max height */
+}
+
+/* Auto-growing height for the bullet points */
+.experience-item .experience-bullets textarea.auto-grow {
+    height: auto;
+    min-height: 40px;  /* Minimum height for a single bullet point */
+    max-height: 120px; /* Smaller maximum height */
+}
+
+/* Adjust for when content is added */
+.experience-item .experience-bullets textarea:focus {
+    outline: none;
+    border-color: #007bff;
 }
