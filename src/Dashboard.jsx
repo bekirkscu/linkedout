@@ -6,7 +6,7 @@ import { Skills } from "./Skills";
 import { AboutMe } from "./AboutMe";
 import { db, auth, signOut } from "./firebase-config";
 import { setDoc, doc, getDoc } from "firebase/firestore";
-import "./Dashboard.css";
+import "./dashboard.css";
 
 export default function Dashboard() {
   const [aboutMe, setAboutMe] = useState("I'm a passionate creative...");
