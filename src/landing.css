@@ -135,7 +135,6 @@
     white-space: nowrap;
   }
   
-  
   .sign-in-section {
     flex: 1;
     text-align: center;
@@ -143,7 +142,25 @@
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    position: relative;
   }
+
+  .error-message {
+    color: #e53e3e;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .consent-message {
+    color: #f8a4b0;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+
+  
   
   .sign-in-note {
     font-size: 15px;
@@ -162,6 +179,7 @@
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
+    margin-top: 20px;
     color: #5f6368;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
@@ -175,5 +193,40 @@
   .google-icon {
     width: 18px;
     height: 18px;
+  }
+  
+  /* Styling the consent checkbox and label on the landing page */
+  .consent-checkbox-container {
+    display: flex;
+    flex-direction: column; /* Stack the checkbox and label vertically */
+    align-items: center; /* Center them horizontally */
+    gap: 10px; /* Add space between checkbox and label */
+    margin-top: 20px; /* Space it a bit lower */
+    font-size: 0.8rem; /* Smaller font size */
+    color: #777;
+    text-align: center;
+  }
+  
+  .consent-checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: 13.5px; /* 25% smaller */
+    height: 13.5px; /* 25% smaller */
+    accent-color: #46aa38; /* Custom color for the checkbox */
+  }
+  
+  .consent-checkbox-container label {
+    font-size: 0.57rem; /* 40% smaller */
+    color: #777; /* Softer gray */
+    line-height: 1.5;
+  }
+  
+  .consent-checkbox-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .consent-checkbox-container a:hover {
+    text-decoration: underline;
   }
   
