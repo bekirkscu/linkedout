@@ -62,12 +62,12 @@ export default function LandingPage() {
             <h3 className="cv-section-title">Why?</h3>
             <ul className="landing-list">
               <li><strong>Time.</strong> CVs aren’t meant to be designed. Too much time is wasted "perfecting" them.</li>
-              <li><strong>One link.</strong> No files. No need for downloads.</li>
-              <li><strong>Limitless.</strong> Not restricted to "one page", yet clear and easy to explore. Often "irrelevant" life experiences show more character for the roles.</li>
-              <li><strong>Authentic.</strong> Express your life experiences with freedom - charity work, pregnancy, others, can often add more to a person than years at a job. Your life experiences aren't limited to your work history.</li>
-              <li><strong>Private.</strong> Your work history doesn't need to be public. It doesn't need to be a social image.</li>
-              <li><strong>Effortless.</strong> Built for all — non-tech users and those with language barriers.</li>
-              <li><strong>Choice.</strong> When viewing CV's, choose what you'd like to read. Not overloaded with writing.</li>
+              <li><strong>One link.</strong> No files. No attachments. No need for downloads.</li>
+              <li><strong>Limitless.</strong> Not restricted to "one page" yet easy to explore. What seems like "irrelevant" experience - can reveal more about a person than work history.</li>
+              <li><strong>Authentic.</strong> Express your life experiences with freedom. Whether it’s voluntary work, personal challenges, or pregnancy - these experiences can reveal more character than years at a job.</li>
+              <li><strong>Private.</strong> Your work history doesn't need to be public. It shouldn’t be just another part of your 'social image.'</li>
+              <li><strong>Effortless.</strong> Built for all — non-tech users and those facing language barriers.</li>
+              <li><strong>Choice.</strong> When viewing CVs, choose what you'd like to read.</li>
             </ul>
 
             <div className="cv-impact-row">
