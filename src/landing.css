@@ -144,7 +144,7 @@
     margin-top: 50px;
     position: relative;
   }
-
+  
   .error-message {
     color: #e53e3e;
     font-size: 14px;
@@ -154,18 +154,15 @@
   
   .consent-message {
     color: #f8a4b0;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     margin-top: 5px;
     text-align: center;
   }
   
-
-  
-  
   .sign-in-note {
-    font-size: 15px;
+    font-size: 13px; /* Reduced font size */
     color: #4a5568;
-    margin-bottom: 16px;
+    margin-bottom: 10px; /* Reduced margin to bring text closer to button */
   }
   
   .google-button {
@@ -179,7 +176,7 @@
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #5f6368;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
@@ -201,32 +198,30 @@
     flex-direction: column; /* Stack the checkbox and label vertically */
     align-items: center; /* Center them horizontally */
     gap: 10px; /* Add space between checkbox and label */
-    margin-top: 20px; /* Space it a bit lower */
-    font-size: 0.8rem; /* Smaller font size */
-    color: #777;
+    margin-top: 15px; /* Space it a bit lower */
     text-align: center;
-  }
-  
-  .consent-checkbox-container input[type="checkbox"] {
-    margin-right: 10px;
-    width: 13.5px; /* 25% smaller */
-    height: 13.5px; /* 25% smaller */
-    accent-color: #46aa38; /* Custom color for the checkbox */
-  }
-  
-  .consent-checkbox-container label {
-    font-size: 0.57rem; /* 40% smaller */
-    color: #777; /* Softer gray */
-    line-height: 1.5;
-  }
-  
-  .consent-checkbox-container a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .consent-checkbox-container a:hover {
+}
+
+/* Change the label text color and adjust size */
+.consent-checkbox-container label {
+    color: #900f0f; /* Red color for the label */
+    font-size: 12px !important; /* Enforce font size */
+}
+
+/* Style the checkbox input and adjust its size */
+.consent-checkbox-container input[type="checkbox"] {
+    accent-color: #900f0f; /* Change the checkbox color */
+    width: 22px; /* Adjust checkbox width */
+    height: 22px; /* Adjust checkbox height */
+    transform: scale(1.2); /* Optional: scale the checkbox size */
+}
+
+/* Optional: style the "I consent" link if it exists inside the label */
+.consent-checkbox-container label a {
+    color: #617ed4; /* Ensure link color is blue */
     text-decoration: underline;
-  }
+}
+
+
+
   
