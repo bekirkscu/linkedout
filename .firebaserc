@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "linkedout-bk"
-  }
+    "default": "linkedout-bk",
+    "live": "linkedout-bk"
+  },
+  "targets": {},
+  "etags": {}
 }
