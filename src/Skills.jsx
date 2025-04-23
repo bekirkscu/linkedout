@@ -1,4 +1,3 @@
-// src/Skills.jsx
 import React, { useState, useEffect } from "react";
 import { EditSaveButton } from "./EditSaveButton";
 
@@ -20,6 +19,12 @@ export function Skills({ data, onUpdate }) {
     setSkills([...skills, "New Skill"]);
   };
 
+  const handleDeleteSkill = (index) => {
+    const updatedSkills = skills.filter((_, i) => i !== index);
+    setSkills(updatedSkills);
+    onUpdate(updatedSkills); // Pass updated skills to parent
+  };
+
   return (
     <section className="section">
       <div className="section-header">
@@ -38,14 +43,26 @@ export function Skills({ data, onUpdate }) {
       {editing ? (
         <div className="skills-edit">
           {skills.map((skill, index) => (
-            <input
-              key={index}
-              className="input skill-input"
-              value={skill}
-              onChange={(e) => handleSkillsChange(index, e.target.value)}
-            />
+            <div key={index} className="skill-item">
+              <input
+                className="input skill-input"
+                value={skill}
+                onChange={(e) => handleSkillsChange(index, e.target.value)}
+              />
+              <button
+                className="delete-skill-btn"
+                onClick={() => handleDeleteSkill(index)}
+              >
+                x
+              </button>
+            </div>
           ))}
-          <button onClick={handleAddSkill}>+ Add Skill</button>
+          <button 
+  onClick={handleAddSkill} 
+  className="add-skill-button"
+>
+  + Add Skill
+</button>
         </div>
       ) : (
         <ul className="skills-list">

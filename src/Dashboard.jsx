@@ -180,7 +180,10 @@ export default function Dashboard() {
       <div className="header">
         <div className="name-display">
           <h3>{personalInfo.name}</h3>
-        </div>
+        </div>  {/* Add the message */}
+      <p style={{ fontSize: "12px", color: "#888", marginTop: "10px" }}>
+        Make sure you press 'Save CV' to save changes.
+      </p>
         <div className="buttons">
           <button className="save-cv-button" onClick={handleSaveCv}>
             Save CV

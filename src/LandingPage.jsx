@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signInWithGoogle } from './firebase-config';
+import './landing.css';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -15,34 +16,60 @@ export default function LandingPage() {
   }, [navigate]);
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600 underline mb-6">Welcome to LinkedOut!</h1>
+    <div className="landing-container">
+      <header className="landing-header">
+        <h1 className="brand-title">
+          <span className="brand-title-wrapper">
+            LinkedOut <span className="brand-subtext">(Not a serious name.)</span>
+          </span>
+        </h1>
+        <div className="made-by">
+          <span className="made-by-bold">Made by Bekir.</span>
+          <span className="made-by-faint">&nbsp;Message me regarding this site on:</span>
+          <a
+            href="https://www.linkedin.com/in/bekir-kuscu/"
+            target="_blank"
+            rel="noreferrer"
+            className="linkedin-icon-link"
+            title="View LinkedIn Profile"
+          >
+            <i className="fab fa-linkedin linkedin-icon"></i>
+          </a>
+        </div>
+      </header>
 
-      <div className="flex gap-8 mb-6">
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src="/vite.svg" className="logo w-16" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src="/react.svg" className="logo react w-16" alt="React logo" />
-        </a>
-      </div>
+      <main className="landing-main">
+        <div className="landing-content">
+          <div className="landing-text">
+            <h2 className="cv-title">Simple.</h2>
+            <h3 className="cv-section-title">Why</h3>
+            <ul className="landing-list">
+  <li><strong>Time.</strong> CVs aren’t meant to be designed. Too much time is wasted "perfecting" them.</li>
+  <li><strong>One link.</strong> No files. No need for downloads.</li>
+  <li><strong>Limitless.</strong> Not restricted to "one page", yet clear and easy to explore.</li>
+  <li><strong>Private.</strong> Your work history doesn't need to be public.</li>
+  <li><strong>Effortless.</strong> Built for all — non-tech users and those with language barriers.</li>
+</ul>
 
-      <button
-        className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300 mb-6"
-        onClick={signInWithGoogle}
-      >
-        Sign In with Google
-      </button>
+<div className="cv-impact-row">
+  <span className="cv-impact-label">For the applicant.</span>
+  <span className="cv-impact-label">For the recruiter.</span>
+</div>
+          </div>
 
-      <h2 className="text-2xl text-gray-700 text-center max-w-xl mt-6">
-        "You're building something really smart": a clean, professional, link-based CV/portfolio site that's:
-      </h2>
-      <ul className="mt-2 text-lg text-gray-600 list-disc pl-5 max-w-2xl text-left">
-        <li>🔗 Private but shareable</li>
-        <li>💡 Minimal effort for non-techy users - no wasted time on design etc - straight to it. Save time, energy, for all. CV's take too much time and thought, when it should just be a place where you write some information on and send it. We focus on other things but this. This is gonna resonate with them all - both sides of CV as well, sender and receiver.</li>
-        <li>🎯 Recruiter-friendly</li>
-        <li>🎭 Easy to use by all, and seemless and clear.</li>
-      </ul>
+          <div className="sign-in-section">
+            <p className="sign-in-note">Safe and easy sign-in with your Google account.</p>
+            <button className="google-button" onClick={signInWithGoogle}>
+              <img
+                src="https://developers.google.com/identity/images/g-logo.png"
+                alt="Google logo"
+                className="google-icon"
+              />
+              Sign in with Google
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
