@@ -1,3 +1,4 @@
+// PublicProfile.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "./firebase-config";
@@ -13,7 +14,6 @@ export default function PublicProfile() {
   useEffect(() => {
     const fetchCV = async () => {
       if (!uid) return;
-
       const docRef = doc(db, "users", uid);
       const docSnap = await getDoc(docRef);
 
@@ -53,8 +53,7 @@ export default function PublicProfile() {
     <div className="public-profile">
       <h1>{personalInfo.name}</h1>
       <p className="profile-subline">
-      {personalInfo.email} | {personalInfo.phoneNumber} | {personalInfo.location} | {personalInfo.workStatus} {" "}
-     |
+        {personalInfo.email} | {personalInfo.phoneNumber} | {personalInfo.location} | {personalInfo.workStatus} |
         {personalInfo.linkedinURL && (
           <a
             href={personalInfo.linkedinURL}
@@ -90,11 +89,17 @@ export default function PublicProfile() {
                   {isExpanded ? "▼" : "▶"}
                 </span>
               </div>
-              {isExpanded && (
+              {isExpanded && item.bullets.length > 0 && (
                 <ul className="exp-bullets">
-                  {item.bullets.map((bullet, idx) => (
-                    <li key={idx}>{bullet}</li>
-                  ))}
+                  {item.bullets
+                    .filter((bullet) => bullet.trim() && bullet.trim() !== "•")
+                    .map((bullet, idx) => (
+                      <li key={idx}>
+                        {bullet.trim().startsWith("•")
+                          ? bullet.trim().substring(1).trim()
+                          : bullet.trim()}
+                      </li>
+                    ))}
                 </ul>
               )}
             </div>
@@ -120,11 +125,17 @@ export default function PublicProfile() {
                   {isExpanded ? "▼" : "▶"}
                 </span>
               </div>
-              {isExpanded && (
+              {isExpanded && item.bullets.length > 0 && (
                 <ul className="edu-bullets">
-                  {item.bullets.map((bullet, idx) => (
-                    <li key={idx}>{bullet}</li>
-                  ))}
+                  {item.bullets
+                    .filter((bullet) => bullet.trim() && bullet.trim() !== "•")
+                    .map((bullet, idx) => (
+                      <li key={idx}>
+                        {bullet.trim().startsWith("•")
+                          ? bullet.trim().substring(1).trim()
+                          : bullet.trim()}
+                      </li>
+                    ))}
                 </ul>
               )}
             </div>
