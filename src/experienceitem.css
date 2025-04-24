@@ -1,0 +1,114 @@
+/* Experience Item Styles */
+.experience-item {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-header input,
+.experience-header select {
+    font-size: 16px;
+    padding: 12px;
+    margin: 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.experience-header .title-input {
+    flex: 7;
+}
+
+.experience-header .date-input {
+    flex: 3;
+}
+
+.experience-header .date-dropdown {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.experience-item .experience-bullets {
+    margin-top: 10px;
+}
+
+.experience-item .experience-bullets li {
+    font-size: 16px;
+    list-style-type: disc;
+    margin-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Button Styles for Add and Delete Experience */
+.experience-header .add-experience,
+.experience-item .delete-experience {
+    background-color: #4fa3d1;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+/* Hover Effect for Both Buttons */
+.experience-header .add-experience:hover,
+.experience-item .delete-experience:hover {
+    background-color: #3d8ea1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus Effect for Both Buttons */
+.experience-header .add-experience:focus,
+.experience-item .delete-experience:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 163, 209, 0.5);
+}
+
+/* Specific Size Differences: */
+.experience-header .add-experience {
+    font-size: 16px;
+    padding: 12px 24px;
+}
+
+.experience-item .delete-experience {
+    font-size: 14px;
+    padding: 8px 16px;
+    background-color: #d04653;
+}
+
+/* Hover Effect for "Delete Experience" */
+.experience-item .delete-experience:hover {
+    background-color: #d04653;
+}
+
+.experience-header {
+    margin-top: 30px;
+}
+
+.experience-header .date-input {
+    margin-top: 5px;
+}
+
+.experience-item .experience-bullets li {
+    margin-left: 20px;
+}
+
+/* Bullet Points Textarea Adjustments */
+.experience-item .experience-bullets textarea {
+    width: 100%;
+    min-height: 50px;
+    max-height: 120px;
+}
+

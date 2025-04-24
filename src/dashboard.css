@@ -3,51 +3,50 @@
     font-family: 'Arial', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 80px; /* Reduced top padding to decrease space above name and buttons */
+    padding: 40px 20px 80px;
     background-color: #f8f9fa;
     border-radius: 8px;
     position: relative;
 }
 
-/* Container for name and buttons */
+/* Header */
 .header {
     font-size: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px; /* Decreased margin-bottom for smaller gap */
-    width: 100%; /* Ensure header takes up full width */
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-/* View & Save CV Buttons */
+/* Buttons */
 .view-cv-button,
-.save-cv-button {
-    background-color: #5aa7e6; /* Softer cooler blue */
+.save-cv-button,
+.add-button,
+.save-button,
+.add-skill-button,
+.logout-button {
+    background-color: #5aa7e6;
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
-    cursor: pointer;
+    margin-right: 5px;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     border: none;
-    margin-left: 10px; /* Ensure some spacing between buttons */
-}
-
-.view-cv-button {
-    /* No need for explicit right positioning */
-}
-
-.save-cv-button {
-    /* Ensures it's properly positioned without hard margin-right */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .view-cv-button:hover,
-.save-cv-button:hover {
+.save-cv-button:hover,
+.add-button:hover,
+.save-button:hover,
+.add-skill-button:hover,
+.logout-button:hover {
     background-color: #3d8fd1;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Section Styles */
@@ -72,28 +71,10 @@
     color: #333;
 }
 
-.add-button, .save-button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-}
-
-.add-button:hover, .save-button:hover {
-    background-color: #0056b3;
-}
-
-.text {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #555;
-}
-
-.input, .aboutme-textarea, .experience-header input, .experience-header select {
-    width: 100%;
+/* Input and Textarea Styles */
+.input, .aboutme-textarea, .experience-header input, .experience-header select,
+.info-field input, .info-field select {
+    width: 95%;
     padding: 12px;
     font-size: 16px;
     line-height: 1.5;
@@ -107,233 +88,9 @@ textarea.input {
     resize: vertical;
 }
 
-/* Personal Info Styles */
-.personal-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.info-field {
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 250px;
-    max-width: calc(33.333% - 20px);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.info-field label {
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-}
-
-.info-field input,
-.info-field select {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    height: 40px;
-    margin-top: 5px;
-}
-
-.save-button {
-    margin-top: 20px;
-    margin-left: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.save-button:hover {
-    background-color: #0056b3;
-}
-
-/* Experience Item Styles */
-.experience-item {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.experience-header input,
-.experience-header select {
-    font-size: 16px;
-    padding: 12px;
-    margin: 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.experience-header .title-input {
-    flex: 7;
-}
-
-.experience-header .date-input {
-    flex: 3;
-}
-
-.experience-header .date-dropdown {
-    width: 100%;
-    margin-top: 5px;
-}
-
-.experience-item .experience-bullets {
-    margin-top: 10px;
-}
-
-.experience-item .experience-bullets li {
-    font-size: 16px;  /* Updated to match the experience title font */
-    list-style-type: disc;
-    margin-left: 20px;
-    font-family: 'Arial', sans-serif;  /* Set font to match experience title */
-}
-
-/* Button Styles for Add and Delete Experience */
-.experience-header .add-experience,
-.experience-item .delete-experience {
-    background-color: #4fa3d1; /* Softer, cooler blue for add experience */
-    color: white;
-    padding: 10px 18px; /* Adjusted padding for balance */
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 6px; /* Rounded corners for a soft look */
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    font-weight: bold;
-}
-
-/* Hover Effect for Both Buttons */
-.experience-header .add-experience:hover,
-.experience-item .delete-experience:hover {
-    background-color: #3d8ea1; /* Slightly darker blue for Add Experience */
-    transform: translateY(-2px); /* Lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-}
-
-/* Focus Effect for Both Buttons */
-.experience-header .add-experience:focus,
-.experience-item .delete-experience:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(79, 163, 209, 0.5); /* Soft focus ring for accessibility */
-}
-
-/* Specific Size Differences: */
-.experience-header .add-experience {
-    font-size: 16px;
-    padding: 12px 24px; /* Slightly larger padding for "Add Experience" */
-}
-
-.experience-item .delete-experience {
-    font-size: 14px;
-    padding: 8px 16px; /* Smaller padding for "Delete Experience" */
-    background-color: #d04653; /* Red for delete button */
-}
-
-/* Hover Effect for "Delete Experience" */
-.experience-item .delete-experience:hover {
-    background-color: #d04653; /* Darker red for hover */
-}
-/* Styles for skill items */
-.skill-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .skill-input {
-    margin-right: 10px;
-    flex-grow: 1;
-  }
-  /* Style for "Add Skill" Button */
-.add-skill-button {
-    background-color: #4fa3d1; /* Soft blue color */
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    margin-top: 15px; /* Adding some spacing from other elements */
-  }
-  
-  .add-skill-button:hover {
-    background-color: #3d8ea1; /* Darker blue for hover */
-    transform: scale(1.05); /* Slightly enlarges the button */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-  }
-  
-  .add-skill-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(79, 163, 209, 0.5); /* Soft focus ring */
-  }
-  
-  .delete-skill-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-left: 10px;
-  }
-  
-  .delete-skill-btn:hover {
-    background-color: #e60000;
-  }
-  
-  .skills-list .skill-badge {
-    display: inline-block;
-    background-color: #e0e0e0;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin: 5px;
-  }
-  
-
-.aboutme-wrapper {
-    max-height: 200px; /* Or however tall you want it */
-    overflow-y: auto;
-}
-
-/* About Me Section Styles */
-.aboutme-textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 10px;
+textarea.aboutme-textarea {
+    height: 100%;
     resize: none;
-    font-family: 'Arial', sans-serif;
-    box-sizing: border-box;
-    height: 100%; /* Fill the wrapper height */
-}
-
-.aboutme-textarea:focus {
-    outline: none;
-    border-color: #007bff;
 }
 
 .textarea-wrapper {
@@ -345,22 +102,97 @@ textarea.input {
     min-height: 100px;
 }
 
-/* Log Out Button - Moved Inside Main Container */
+/* Personal Info */
+.personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjusts the space between boxes */
+    margin-top: 20px;
+}
+
+.info-field {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between label and input */
+    margin-right: 5px;
+}
+.info-field label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* About Me Section */
+/* About Me Section */
+.aboutme-wrapper {
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.aboutme-textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: inherit;
+    background-color: white;
+    color: #333;
+    overflow-y: auto;
+}
+
+.aboutme-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.bullet-points-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .bullet-textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+
+/* Log Out Button */
 .logout-button {
     background-color: #dc3545;
     color: white;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    transition: background-color 0.2s ease, transform 0.2s ease;
     position: absolute;
     bottom: 20px;
     right: 20px;
+    z-index: 100;
 }
 
 .logout-button:hover {
@@ -368,80 +200,7 @@ textarea.input {
     transform: translateY(-2px);
 }
 
-/* Additional Styling for the Experience Section */
-.experience-header {
-    margin-top: 30px;
-}
-
-.experience-header .date-input {
-    margin-top: 5px;
-}
-
-.experience-item .experience-bullets li {
-    margin-left: 20px;
-}
-
-/* Button Hover Effects */
-/* Button Styles for Add Experience and Add Education */
-.add-button {
-    background-color: #5aa7e6; /* Softer, cooler blue */
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    border: none;
-}
-
-/* Hover Effect for Add Experience and Add Education Buttons */
-.add-button:hover {
-    background-color: #3d8fd1; /* Darker blue for hover effect */
-    transform: translateY(-2px); /* Lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-}
-
-/* Focus Effect for Add Experience and Add Education Buttons */
-.add-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(79, 163, 209, 0.5); /* Focus effect */
-}
-
-
-/* Adjust experience title and date to have a bit of space around the "to" */
-.experience-header .date-input {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.experience-header .date-to {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-/* Experience Header Date Inputs Styling */
-.experience-header .date-input input {
-    flex: 1;
-}
-
-/* Flex behavior for date section: ensure proper spacing for "to" */
-.experience-header .date-input {
-    display: flex;
-    align-items: center;
-}
-
-/* Bullet Points Textarea Adjustments */
-.experience-item .experience-bullets textarea {
-    width: 100%;
-    min-height: 50px; /* Reduced min-height */
-    max-height: 120px; /* Max height for overflow */
-}
-
-/* Media Section Styles */
+/* Media Section */
 .media-section {
     margin-top: 20px;
 }

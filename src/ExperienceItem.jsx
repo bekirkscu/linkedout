@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "./experienceitem.css";
+
 
 export default function ExperienceItem({
   data,
@@ -147,26 +149,26 @@ export default function ExperienceItem({
       </div>
 
       {editing && (
-        <div className="bullet-points">
-          <textarea
-            value={
-              localData.bullets.length === 0
-                ? "• "
-                : localData.bullets.join("\n")
-            }
-            onChange={(e) => {
-              const lines = e.target.value.split("\n");
-              const bullets = lines.map((line) =>
-                line.startsWith("•") ? line : `• ${line}`
-              );
-              handleChange("bullets", bullets.filter(b => b.trim() !== "•"));
-            }}
-            onKeyDown={handleKeyDown}
-            rows={Math.max(3, localData.bullets.length)}
-            className="input"
-          />
-        </div>
-      )}
+  <div className="bullet-points-wrapper">
+    <textarea
+      value={
+        localData.bullets.length === 0
+          ? "• "
+          : localData.bullets.join("\n")
+      }
+      onChange={(e) => {
+        const lines = e.target.value.split("\n");
+        const bullets = lines.map((line) =>
+          line.startsWith("•") ? line : `• ${line}`
+        );
+        handleChange("bullets", bullets.filter(b => b.trim() !== "•"));
+      }}
+      onKeyDown={handleKeyDown}
+      rows={Math.max(3, localData.bullets.length)}
+      className="input bullet-textarea"
+    />
+  </div>
+)}
 
       {editing && (
         <button className="delete-experience" onClick={() => onDelete(localData)}>

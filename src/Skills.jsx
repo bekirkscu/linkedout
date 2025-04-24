@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { EditSaveButton } from "./EditSaveButton";
+import './skills.css';
 
 export function Skills({ data, onUpdate }) {
   const [skills, setSkills] = useState(data || []);

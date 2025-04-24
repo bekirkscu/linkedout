@@ -66,7 +66,7 @@ export default function LandingPage() {
               <li><strong>Limitless.</strong> Not restricted to "one page" yet easy to explore. What seems like "irrelevant" experience - can reveal more about a person than work history.</li>
               <li><strong>Authentic.</strong> Express your life experiences with freedom. Whether it’s voluntary work, personal challenges, or pregnancy - these experiences can reveal more character than years at a job.</li>
               <li><strong>Private.</strong> Your work history doesn't need to be public. It shouldn’t be just another part of your 'social image'.</li>
-              <li><strong>Effortless.</strong> Built for all — non-tech users and those facing language barriers.</li>
+              <li><strong>Effortless.</strong> Built for all - no tech skills or design experience required.</li>
               <li><strong>Choice.</strong> When viewing CVs, choose what you'd like to read.</li>
             </ul>
 
